@@ -1,0 +1,412 @@
+/**
+ * أنماط محرر المحتوى لقالب مدونة فهد الشراري (الإصدار 2.0)
+ * هذا الملف يضمن تطابق ما تراه في المحرر مع ما سيظهر في المقال المنشور
+ *
+ * @package Fahad_Blog
+ * @version 2.0
+ */
+
+/* ألوان رئيسية وقيم متغيرات */
+:root {
+    --primary-color: #00adb5;
+    --secondary-color: #393e46;
+    --background-color: #222831;
+    --text-color: #eeeeee;
+    --card-bg-color: #2d343d;
+    --transition-speed: 0.3s;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --border-radius: 10px;
+  }
+  
+  /* إعدادات الخط والاتجاه */
+  .editor-styles-wrapper {
+    font-family: 'Cairo', sans-serif;
+    color: var(--text-color);
+    direction: rtl;
+    line-height: 1.8;
+    font-size: 16px;
+    background-color: var(--card-bg-color);
+    padding: 20px;
+  }
+  
+  /* العناوين */
+  .editor-styles-wrapper h1 {
+    font-size: 2.5rem;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+    font-weight: 700;
+  }
+  
+  .editor-styles-wrapper h2 {
+    font-size: 1.8rem;
+    margin-top: 1.8em;
+    margin-bottom: 0.8em;
+    color: var(--primary-color);
+    font-weight: 700;
+  }
+  
+  .editor-styles-wrapper h3 {
+    font-size: 1.5rem;
+    margin-top: 1.5em;
+    margin-bottom: 0.6em;
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  .editor-styles-wrapper h4 {
+    font-size: 1.3rem;
+    margin-top: 1.3em;
+    margin-bottom: 0.6em;
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  .editor-styles-wrapper h5 {
+    font-size: 1.1rem;
+    margin-top: 1.2em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+  }
+  
+  .editor-styles-wrapper h6 {
+    font-size: 1rem;
+    margin-top: 1.2em;
+    margin-bottom: 0.5em;
+    font-weight: 600;
+  }
+  
+  /* فقرات */
+  .editor-styles-wrapper p {
+    margin-bottom: 1.5em;
+    line-height: 1.8;
+  }
+  
+  /* روابط */
+  .editor-styles-wrapper a {
+    color: var(--primary-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color var(--transition-speed);
+  }
+  
+  .editor-styles-wrapper a:hover {
+    color: var(--text-color);
+  }
+  
+  /* قوائم */
+  .editor-styles-wrapper ul,
+  .editor-styles-wrapper ol {
+    margin-bottom: 1.5em;
+    padding-right: 1.5em;
+  }
+  
+  .editor-styles-wrapper ul li,
+  .editor-styles-wrapper ol li {
+    margin-bottom: 0.5em;
+  }
+  
+  .editor-styles-wrapper ul {
+    list-style-type: disc;
+  }
+  
+  .editor-styles-wrapper ol {
+    list-style-type: decimal;
+  }
+  
+  /* اقتباسات */
+  .editor-styles-wrapper blockquote {
+    margin: 2em 0;
+    padding: 1.5em;
+    background-color: rgba(0, 173, 181, 0.05);
+    border-right: 4px solid var(--primary-color);
+    font-style: italic;
+  }
+  
+  .editor-styles-wrapper blockquote p:last-child {
+    margin-bottom: 0;
+  }
+  
+  .editor-styles-wrapper blockquote cite {
+    display: block;
+    margin-top: 1em;
+    font-style: normal;
+    font-size: 0.9em;
+    opacity: 0.8;
+  }
+  
+  /* كود برمجي */
+  .editor-styles-wrapper code {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: monospace;
+  }
+  
+  .editor-styles-wrapper pre {
+    background-color: var(--background-color);
+    padding: 1.5em;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin-bottom: 1.5em;
+  }
+  
+  .editor-styles-wrapper pre code {
+    background-color: transparent;
+    padding: 0;
+  }
+  
+  /* جداول */
+  .editor-styles-wrapper table {
+    width: 100%;
+    margin-bottom: 1.5em;
+    border-collapse: collapse;
+  }
+  
+  .editor-styles-wrapper table th,
+  .editor-styles-wrapper table td {
+    padding: 0.75em;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: right;
+  }
+  
+  .editor-styles-wrapper table th {
+    background-color: rgba(0, 173, 181, 0.1);
+    font-weight: 600;
+    vertical-align: bottom;
+  }
+  
+  .editor-styles-wrapper table tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
+  /* صور */
+  .editor-styles-wrapper img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 1.5em 0;
+  }
+  
+  .editor-styles-wrapper figure {
+    margin: 2em 0;
+  }
+  
+  .editor-styles-wrapper figure img {
+    margin: 0;
+  }
+  
+  .editor-styles-wrapper figcaption {
+    font-size: 0.9em;
+    padding: 0.5em;
+    text-align: center;
+    opacity: 0.8;
+  }
+  
+  /* محاذاة الصور */
+  .editor-styles-wrapper .alignleft {
+    float: right;
+    margin: 0.5em 0 1em 1em;
+  }
+  
+  .editor-styles-wrapper .alignright {
+    float: left;
+    margin: 0.5em 1em 1em 0;
+  }
+  
+  .editor-styles-wrapper .aligncenter {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  
+  /* عناصر متنوعة */
+  .editor-styles-wrapper hr {
+    border: 0;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 2em 0;
+  }
+  
+  .editor-styles-wrapper abbr,
+  .editor-styles-wrapper acronym {
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+    cursor: help;
+  }
+  
+  .editor-styles-wrapper mark {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0 0.25em;
+  }
+  
+  /* أنماط متقدمة */
+  .editor-styles-wrapper .wp-caption {
+    max-width: 100%;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 0.5em;
+    border-radius: 5px;
+    margin-bottom: 1.5em;
+  }
+  
+  .editor-styles-wrapper .wp-caption-text {
+    font-size: 0.9em;
+    text-align: center;
+    margin-top: 0.5em;
+  }
+  
+  .editor-styles-wrapper .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -0.5em 1.5em;
+  }
+  
+  .editor-styles-wrapper .gallery-item {
+    width: 33.33%;
+    padding: 0.5em;
+    box-sizing: border-box;
+  }
+  
+  .editor-styles-wrapper .gallery-icon img {
+    margin: 0;
+    border-radius: 5px;
+  }
+  
+  .editor-styles-wrapper .gallery-caption {
+    font-size: 0.8em;
+    padding: 0.5em 0;
+    text-align: center;
+  }
+  
+  /* تنسيق كتل Gutenberg */
+  .wp-block {
+    max-width: 840px;
+  }
+  
+  .wp-block[data-align="wide"] {
+    max-width: 1100px;
+  }
+  
+  .wp-block[data-align="full"] {
+    max-width: none;
+  }
+  
+  /* ألوان كتل Gutenberg */
+  .has-primary-color {
+    color: var(--primary-color);
+  }
+  
+  .has-secondary-color {
+    color: var(--secondary-color);
+  }
+  
+  .has-background-color {
+    color: var(--background-color);
+  }
+  
+  .has-text-color {
+    color: var(--text-color);
+  }
+  
+  .has-primary-background-color {
+    background-color: var(--primary-color);
+  }
+  
+  .has-secondary-background-color {
+    background-color: var(--secondary-color);
+  }
+  
+  .has-background-background-color {
+    background-color: var(--background-color);
+  }
+  
+  .has-text-background-color {
+    background-color: var(--text-color);
+  }
+  
+  /* تحسينات لكتل Gutenberg محددة */
+  .wp-block-quote {
+    border-right: 4px solid var(--primary-color);
+    border-left: none;
+    padding-right: 1em;
+    padding-left: 0;
+  }
+  
+  .wp-block-pullquote {
+    border-top: 4px solid var(--primary-color);
+    border-bottom: 4px solid var(--primary-color);
+    color: var(--text-color);
+  }
+  
+  .wp-block-button__link {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-radius: var(--border-radius);
+  }
+  
+  .is-style-outline .wp-block-button__link {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    background-color: transparent;
+  }
+  
+  .wp-block-cover,
+  .wp-block-cover-image {
+    min-height: 430px;
+  }
+  
+  .wp-block-image figcaption {
+    margin-top: 0.5em;
+    color: var(--text-color);
+    opacity: 0.8;
+  }
+  
+  .wp-block-table table {
+    border-collapse: collapse;
+  }
+  
+  .wp-block-table th {
+    background-color: rgba(0, 173, 181, 0.1);
+  }
+  
+  .wp-block-separator {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* تنسيق أحجام الكتل */
+  .has-small-font-size {
+    font-size: 0.8rem;
+  }
+  
+  .has-normal-font-size {
+    font-size: 1rem;
+  }
+  
+  .has-medium-font-size {
+    font-size: 1.25rem;
+  }
+  
+  .has-large-font-size {
+    font-size: 1.5rem;
+  }
+  
+  .has-huge-font-size {
+    font-size: 2rem;
+  }
+  
+  /* تحسينات لإمكانية الوصول */
+  .screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+  }
+  
+  /* تنسيق العنوان الرئيسي */
+  .editor-post-title__block .editor-post-title__input {
+    font-family: 'Cairo', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-align: right;
+  }

@@ -1,0 +1,231 @@
+/**
+ * أنماط CSS الحرجة للتحميل السريع
+ * قالب مدونة فهد الشراري (الإصدار 2.0)
+ *
+ * هذا الملف يحتوي على أنماط CSS الأساسية التي تحتاجها الصفحة للعرض الأولي السريع
+ * 
+ * @package Fahad_Blog
+ * @version 2.0
+ */
+
+ :root{
+    --primary-color:#00adb5;
+    --secondary-color:#393e46;
+    --background-color:#222831;
+    --text-color:#eeeeee;
+    --card-bg-color:#2d343d;
+    --transition-speed:0.3s;
+    --shadow-color:rgba(0, 0, 0, 0.2);
+    --border-radius:10px
+  }
+  
+  [data-theme=light]{
+    --primary-color:#00adb5;
+    --secondary-color:#f5f5f5;
+    --background-color:#ffffff;
+    --text-color:#333333;
+    --card-bg-color:#f9f9f9;
+    --shadow-color:rgba(0, 0, 0, 0.1)
+  }
+  
+  *,*::before,*::after{
+    box-sizing:border-box;
+    margin:0;
+    padding:0
+  }
+  
+  html{
+    scroll-behavior:smooth;
+    font-size:100%;
+    scroll-padding-top:70px
+  }
+  
+  body{
+    font-family:'Cairo',sans-serif;
+    line-height:1.6;
+    direction:rtl;
+    background-color:var(--background-color);
+    color:var(--text-color);
+    transition:background-color 0.5s,color 0.5s;
+    text-rendering:optimizeSpeed;
+    margin:0;
+    padding:0
+  }
+  
+  a{
+    text-decoration:none;
+    color:inherit
+  }
+  
+  ul{
+    list-style:none
+  }
+  
+  .container{
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 20px;
+    width:100%
+  }
+  
+  .site-header{
+    background-color:var(--background-color);
+    padding:20px 0;
+    border-bottom:1px solid rgba(255,255,255,0.05);
+    position:relative;
+    z-index:100
+  }
+  
+  .site-header .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:relative
+  }
+  
+  .main-navigation{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:100%;
+    position:relative
+  }
+  
+  .site-branding{
+    display:flex;
+    align-items:center;
+    z-index:10
+  }
+  
+  .logo{
+    font-size:2rem;
+    font-weight:700;
+    color:var(--primary-color);
+    position:relative;
+    overflow:hidden;
+    display:inline-block;
+    padding:5px 10px
+  }
+  
+  .nav-menu{
+    display:flex;
+    align-items:center;
+    transition:all var(--transition-speed) ease-in-out;
+    margin:0;
+    padding:0
+  }
+  
+  .nav-menu li{
+    margin-left:20px;
+    position:relative
+  }
+  
+  .nav-menu li a{
+    font-size:1.1rem;
+    transition:color var(--transition-speed);
+    padding:5px 2px;
+    display:inline-block;
+    position:relative;
+    font-weight:600
+  }
+  
+  .menu-toggle{
+    display:none;
+    background:transparent;
+    border:none;
+    color:var(--primary-color);
+    font-size:1.5rem;
+    cursor:pointer;
+    transition:transform 0.2s;
+    padding:8px;
+    z-index:10
+  }
+  
+  .theme-toggle{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    z-index:999;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background-color:var(--card-bg-color);
+    color:var(--primary-color);
+    border:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 2px 8px var(--shadow-color);
+    opacity:0.8
+  }
+  
+  #light-icon{
+    display:none
+  }
+  
+  [data-theme=light] #dark-icon{
+    display:none
+  }
+  
+  [data-theme=light] #light-icon{
+    display:block
+  }
+  
+  .blog-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(350px, 1fr));
+    gap:30px;
+    margin-bottom:40px
+  }
+  
+  .blog-card{
+    background-color:var(--card-bg-color);
+    border-radius:var(--border-radius);
+    overflow:hidden;
+    box-shadow:0 4px 10px var(--shadow-color);
+    transition:transform var(--transition-speed), box-shadow var(--transition-speed);
+    display:flex;
+    flex-direction:column;
+    height:100%
+  }
+  
+  .blog-card-image{
+    position:relative;
+    width:100%;
+    height:200px;
+    overflow:hidden;
+    background-color:var(--secondary-color)
+  }
+  
+  @media (max-width:768px){
+    .menu-toggle{
+      display:block
+    }
+  
+    .nav-menu{
+      position:fixed;
+      top:70px;
+      right:-200px;
+      flex-direction:column;
+      background-color:var(--card-bg-color);
+      width:200px;
+      border-radius:10px;
+      box-shadow:0 4px 6px var(--shadow-color);
+      transition:right 0.3s ease-in-out;
+      height:auto;
+      max-height:calc(100vh - 100px);
+      overflow-y:auto;
+      padding:20px;
+      z-index:1000
+    }
+  
+    .nav-menu.active{
+      right:20px
+    }
+  
+    .nav-menu li{
+      margin:15px 0;
+      width:100%
+    }
+  }

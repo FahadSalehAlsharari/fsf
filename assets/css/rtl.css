@@ -1,0 +1,314 @@
+/**
+ * أنماط إضافية لدعم اللغات ذات الاتجاه من اليمين إلى اليسار (RTL)
+ * قالب مدونة فهد الشراري (الإصدار 2.0)
+ *
+ * @package Fahad_Blog
+ * @version 2.0
+ */
+
+/* 
+ * هذا الملف يحتوي على تعديلات CSS خاصة للغات RTL.
+ * معظم CSS الأساسي تم تعريفه بالفعل باتجاه RTL (direction: rtl).
+ * هنا نضيف تعديلات إضافية أو إصلاحات للتأكد من عمل القالب بشكل صحيح في RTL.
+ */
+
+/* تصحيح اتجاه أيقونات Font Awesome */
+.fa,
+.fas,
+.far,
+.fab {
+  transform: scale(-1, 1);
+}
+
+/* استثناءات لبعض الأيقونات المحددة (التي لا تحتاج إلى عكس) */
+.fa-moon,
+.fa-sun,
+.fa-calendar-alt,
+.fa-clock,
+.fa-user,
+.fa-folder-open,
+.fa-tags,
+.fa-comment,
+.fa-search,
+.fa-home,
+.fa-exclamation-circle,
+.fa-pencil-alt,
+.fa-clipboard,
+.fa-check,
+.fa-shield-alt,
+.fa-laptop-code,
+.fa-code,
+.fa-newspaper {
+  transform: none;
+}
+
+/* تصحيح اتجاه عناصر القائمة */
+.nav-menu li {
+  margin-right: 0;
+  margin-left: 20px;
+}
+
+/* تصحيح لمربعات التحديد في نماذج التعليقات */
+input[type="checkbox"] {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+/* تصحيح اتجاه روابط "اقرأ المزيد" */
+.read-more i {
+  display: inline-block;
+  transform: scaleX(-1);
+}
+
+/* تصحيح اتجاه أسهم التنقل */
+.pagination .fa-angle-right,
+.pagination .fa-angle-left,
+.nav-previous .fa-angle-left,
+.nav-next .fa-angle-right {
+  transform: scaleX(-1);
+}
+
+/* تصحيح هوامش فقرات المحتوى في صفحة المقال */
+.entry-content ul,
+.entry-content ol {
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+/* تصحيح محاذاة الصور في المحتوى */
+.entry-content .alignleft {
+  float: right;
+  margin: 0.5em 0 1em 1em;
+}
+
+.entry-content .alignright {
+  float: left;
+  margin: 0.5em 1em 1em 0;
+}
+
+/* تصحيح اتجاه جدول المحتويات */
+.toc-content li {
+  border-left: none;
+  border-right: 2px solid rgba(0, 173, 181, 0.3);
+  padding-left: 0;
+  padding-right: 15px;
+}
+
+.toc-content li:hover {
+  border-right-color: var(--primary-color);
+}
+
+/* تصحيح هوامش الاقتباسات */
+blockquote {
+  border-left: none;
+  border-right: 4px solid var(--primary-color);
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+/* تصحيح اتجاه نماذج البحث */
+.search-form {
+  flex-direction: row-reverse;
+}
+
+.search-form-header .search-submit {
+  left: 10px;
+  right: auto;
+}
+
+.search-form-header .search-close {
+  left: -50px;
+  right: auto;
+}
+
+/* تصحيح اتجاه تنقل التعليقات */
+.comment-navigation .nav-previous {
+  float: right;
+}
+
+.comment-navigation .nav-next {
+  float: left;
+  text-align: left;
+}
+
+/* تصحيح هوامش وحدات القائمة الجانبية */
+.widget ul li {
+  padding-left: 0;
+  padding-right: 15px;
+}
+
+.widget ul li:before {
+  left: auto;
+  right: 0;
+}
+
+/* تصحيح اتجاه شارات التصنيفات والوسوم */
+.entry-footer .cat-links i,
+.entry-footer .tags-links i {
+  margin-right: 0;
+  margin-left: 5px;
+}
+
+/* تصحيح اتجاه عناصر التعليقات */
+.comments-area .avatar {
+  float: right;
+  margin-right: 0;
+  margin-left: 15px;
+}
+
+.comment-metadata a {
+  margin-right: 0;
+  margin-left: 15px;
+}
+
+.comment-content {
+  margin-left: 0;
+  margin-right: 65px;
+}
+
+/* تصحيح اتجاه فتات التنقل */
+.breadcrumbs .breadcrumb-separator {
+  transform: scaleX(-1);
+}
+
+/* تصحيح اتجاه أزرار المشاركة */
+.social-sharing a {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+/* تصحيح عرض معلومات الكاتب */
+.author-avatar {
+  float: right;
+  margin-right: 0;
+  margin-left: 20px;
+}
+
+/* تصحيح اتجاه نموذج التعليقات */
+.comment-form-author,
+.comment-form-email {
+  float: right;
+}
+
+.comment-form-author {
+  padding-right: 0;
+  padding-left: 10px;
+}
+
+.comment-form-email {
+  padding-left: 0;
+  padding-right: 10px;
+}
+
+/* تصحيح اتجاه تذييل المقال */
+.entry-footer .edit-link {
+  float: left;
+}
+
+/* تصحيح اتجاه زر التمرير للأعلى وزر تبديل المظهر */
+.scroll-to-top {
+  left: 20px;
+  right: auto;
+}
+
+.theme-toggle {
+  right: 20px;
+  left: auto;
+}
+
+/* تصحيح اتجاه أزرار القائمة الفرعية في الموبايل */
+.submenu-toggle {
+  left: 0;
+  right: auto;
+}
+
+.nav-menu .menu-item-has-children {
+  padding-right: 0;
+  padding-left: 30px;
+}
+
+/* تصحيح اتجاه قائمة التنقل المتجاوبة */
+@media (max-width: 768px) {
+  .nav-menu {
+    right: -200px;
+    left: auto;
+  }
+  
+  .nav-menu.active {
+    right: 20px;
+    left: auto;
+  }
+
+  .menu-toggle {
+    margin-left: 0;
+    margin-right: auto;
+  }
+  
+  .theme-toggle {
+    left: 65px;
+    right: auto;
+  }
+}
+
+/* تصحيح اتجاه زر العودة للأعلى في حالة الشاشات الصغيرة */
+@media (max-width: 480px) {
+  .scroll-to-top {
+    left: 10px;
+    right: auto;
+  }
+  
+  .theme-toggle {
+    bottom: 20px;
+    left: 60px;
+    right: auto;
+  }
+  
+  .font-size-controls {
+    right: auto;
+    left: 110px;
+  }
+}
+
+/* تصحيح اتجاه عرض القوائم في أقسام متنوعة */
+.search-suggestions ul,
+.link-column ul {
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+/* تحسينات لرموز Font Awesome في حالات خاصة */
+.breadcrumb-item a i,
+.social-links a i,
+.author-posts a i {
+  margin-left: 5px;
+  margin-right: 0;
+}
+
+/* تصحيح اتجاه عناصر القائمة الفرعية */
+.nav-menu .sub-menu {
+  right: 0;
+  left: auto;
+}
+
+/* تصحيح هوامش ومحاذاة عناصر التذييل */
+.footer-widget ul li {
+  padding-right: 0;
+}
+
+/* تصحيح اتجاه عناصر زر تغيير حجم النص */
+.font-size-controls {
+  right: 75px;
+  left: auto;
+}
+
+/* تصحيح اتجاه أيقونات نسخ الكود */
+.copy-code {
+  left: 5px;
+  right: auto;
+}
+
+/* تصحيح عرض عنوان الودجات */
+.widget-title::after {
+  right: 0;
+  left: auto;
+}
